@@ -2,28 +2,36 @@
 // un componente React, nella sua forma più basilare, è una funzione
 // che ritorna del JSX
 
-import logo from './logo.svg'
 import './App.css'
 
-import MyComponent from './components/MyComponent'
+// import MyComponent from './components/MyComponent'
+import Heading from './components/Heading'
+import ClassComponent from './components/ClassComponent'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="first-heading">Prima React App!</h1>
-        <MyComponent />
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Documentazione
-        </a>
 
-        <MyComponent />
+        <Heading
+          title="INTRODUZIONE"
+          color="green"
+          customPlaceholder="Scrivi il tuo nome"
+        />
+
+        <Heading
+          title="PRIMI COMPONENTI"
+          color="purple"
+          customPlaceholder="Scrivi il tuo cognome"
+        />
+
+        <Heading customPlaceholder="Scrivi il tuo email" />
+        {/* senza una prop title, dopo i due punti non comparirà niente */}
+
+        <ClassComponent mainTitle="TITOLO DELLA CLASSE" />
+        {/* <MyComponent /> */}
+        {/* è possibile invocare un componente più volte */}
       </header>
     </div>
   )
